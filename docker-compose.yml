@@ -1,0 +1,14 @@
+services:
+  postgresql:
+    image: postgres:18.3-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: aeromiles_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - aeromiles_data:/var/lib/postgresql
+
+volumes:
+  aeromiles_data:
